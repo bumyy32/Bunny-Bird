@@ -21,14 +21,14 @@ class Game:
 
             #event loop
             for event in pygame.event.get():
-                if event.type == pygame.QUIT()
+                if event.type == pygame.QUIT():
                     pygame.quit()
                     sys.exit()
 
             # Game Logic
             pygame.display.update()
             self.clock.tick(FRAMERATE)
-            
+
 if __name__ == '__main__':
     game = Game()
     game.run()
