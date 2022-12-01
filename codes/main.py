@@ -42,7 +42,6 @@ class Game:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     self.plane.jump()
 
-
             # Game Logic
             self.display_surface.fill('black')
             self.all_sprites.update(dt)
