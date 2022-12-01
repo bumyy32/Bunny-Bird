@@ -47,7 +47,8 @@ class Game:
                     self.plane.jump()
 
                 if event.type == self.obstacle_timer:
-                    Obstacle()
+                    pass
+                    # Obstacle()
 
             # Game Logic
             self.display_surface.fill('black')
