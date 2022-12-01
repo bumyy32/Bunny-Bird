@@ -44,3 +44,16 @@ class Ground(pygame.sprite.Sprite):
             self.pos.x = 0
 
         self.rect.x = round(self.pos.x)
+
+
+class Plane(pygame.sprite.Sprite):
+    def __init__(self, groups, scale_factor):
+        super().__init__(groups)
+
+        # Img
+        self.import_frames(scale_factor)  # Choose a list of frames
+        self.frame_index = 0  # Pick a frame
+        self.image = self.frames[self.frame_index]  # Move to the next frame, doing animation
+
+        # Rect
+        self.rect = self.image.get_rect()

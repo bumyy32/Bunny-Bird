@@ -22,8 +22,8 @@ class Game:
         self.scale_factor = WINDOW_HEIGHT / bg_height
 
         # Sprite setup
-        BG(self.all_sprites,self.scale_factor)
-        Ground(self.all_sprites,self.scale_factor)
+        BG(self.all_sprites, self.scale_factor)
+        Ground(self.all_sprites, self.scale_factor)
 
     def run(self):
         last_time = time.time()
