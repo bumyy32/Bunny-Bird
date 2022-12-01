@@ -60,7 +60,7 @@ class Plane(pygame.sprite.Sprite):
         self.pos = pygame.math.Vector2(self.rect.topleft)
 
         # Plane movement
-        self.gravity = 20
+        self.gravity = 240
         self.direction = 0
 
     def import_frames(self, scale_factor):
