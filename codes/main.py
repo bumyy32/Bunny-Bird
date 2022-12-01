@@ -17,14 +17,14 @@ class Game:
         self.all_sprites = pygame.sprite.Group()
         self.collision_sprites = pygame.sprite.Group()
 
-        # Scaling backgrounnd
+        # Scaling background
         bg_height = pygame.image.load('../graphics/environment/background.png').get_height()
         self.scale_factor = WINDOW_HEIGHT / bg_height
 
         # Sprite setup
         BG(self.all_sprites, self.scale_factor)
         Ground(self.all_sprites, self.scale_factor)
-        Plane(self.all_sprites, self.scale_factor)
+        Plane(self.all_sprites, self.scale_factor / 2)
 
     def run(self):
         last_time = time.time()
