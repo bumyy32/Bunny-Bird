@@ -1,6 +1,6 @@
 import pygame, sys, time
 from settings import *
-from sprites import BG, Ground, Plane
+from sprites import *
 
 
 class Game:
@@ -47,8 +47,7 @@ class Game:
                     self.plane.jump()
 
                 if event.type == self.obstacle_timer:
-                    pass
-                    # Obstacle()
+                    Obstacle(self.all_sprites, self.scale_factor)
 
             # Game Logic
             self.display_surface.fill('black')
