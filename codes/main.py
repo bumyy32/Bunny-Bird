@@ -48,6 +48,8 @@ class Game:
 
                 if event.type == self.obstacle_timer:
                     Obstacle(self.all_sprites, self.scale_factor)
+                    # If we put a multiplier like *1.2 in front of the scale_factor, we make the obstacles larger,
+                    # and the game become much more difficult
 
             # Game Logic
             self.display_surface.fill('black')
