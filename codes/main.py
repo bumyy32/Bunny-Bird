@@ -1,6 +1,6 @@
 import pygame, sys, time
 from settings import *
-from sprites import *
+from sprites import BG, Ground, Plane, Obstacle
 
 
 class Game:
@@ -23,7 +23,7 @@ class Game:
 
         # Sprite setup
         BG(self.all_sprites, self.scale_factor)
-        Ground([self.all_sprites,self.collision_sprites], self.scale_factor)
+        Ground([self.all_sprites, self.collision_sprites], self.scale_factor)
         self.plane = Plane(self.all_sprites, self.scale_factor / 2)
 
         # timer
@@ -31,7 +31,7 @@ class Game:
         pygame.time.set_timer(self.obstacle_timer, 1400)
 
     def collisions(self):
-        if pygame.sprite.spritecollide(self.plane,self.collision_sprites,False):
+        if pygame.sprite.spritecollide(self.plane, self.collision_sprites, False):
             pygame.quit()
             sys.exit()
 
@@ -48,11 +48,12 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     self.plane.jump()
 
                 if event.type == self.obstacle_timer:
-                    Obstacle([self.all_sprites,self.collision_sprites], self.scale_factor)
+                    Obstacle([self.all_sprites, self.collision_sprites], self.scale_factor)
                     # If we put a multiplier like *1.2 in front of the scale_factor, we make the obstacles larger,
                     # and the game become much more difficult
 
@@ -61,6 +62,7 @@ class Game:
             self.all_sprites.update(dt)
             self.collisions()
             self.all_sprites.draw(self.display_surface)
+
             pygame.display.update()
             self.clock.tick(FRAMERATE)
 
