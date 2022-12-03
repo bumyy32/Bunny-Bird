@@ -40,10 +40,10 @@ class Game:
 
         # Menu
         self.menu_surface = pygame.image.load('../graphics/ui/menu.png').convert_alpha()
-        self.menu_rect = self.menu_surface.get_rect(center=(WINDOW_WIDTH, WINDOW_HEIGHT / 2))
+        self.menu_rect = self.menu_surface.get_rect(center=(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2))
 
         # Music
-        self.bg_music = pygame.mixer.Sound('../sounds/music.wav')
+        self.bg_music = pygame.mixer.Sound('../sounds/music2.wav')
         self.bg_music.play(loops=-1)
         self.bg_music.set_volume(0.05)
 
@@ -99,7 +99,6 @@ class Game:
             self.all_sprites.update(dt)
             self.all_sprites.draw(self.display_surface)
             self.display_score()
-            self.bg_music.play()
 
             if self.active:
                 self.collisions()
